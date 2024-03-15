@@ -5,14 +5,30 @@ namespace cwiczenia3;
 
 public abstract class Container : IContainer
 {
-    private int cargoWeight;
+    private int cargoWeight; //[kg]
+    private int height; //[cm]
+    private int containerWeight; //[kg]
+    private int depth; //[cm]
+    private string serialNumber; //[KON-C-1] C=rodzaj, 1=numer
+    private int maxCargoWeight; //[kg]
+    
     public int CargoWeight { get; protected set; }
+    public int Height { get; protected set; }
+    public int ContainerWeight { get; protected set; }
+    public int Depth { get; protected set; }
+    public string SerialNumber { get; protected set; }
+    public int MaxCargoWeight { get; protected set; }
 
-    protected Container(int cargoWeight)
+    protected Container(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight)
     {
         CargoWeight = cargoWeight;
+        Height = height;
+        ContainerWeight = containerWeight;
+        Depth = depth;
+        SerialNumber = serialNumber;
+        MaxCargoWeight = maxCargoWeight;
     }
-    
+
     public void Unload()
     {
         throw new NotImplementedException();
@@ -20,6 +36,11 @@ public abstract class Container : IContainer
 
     public virtual void Load(int cargoWeight)
     {
-        throw new OverfillException("Message1");
+        if((this.cargoWeight+cargoWeight) <= maxCargoWeight)
+            CargoWeight += cargoWeight;
+        else
+        {
+            throw new OverfillException("Too heavy cargo. Unable to load.");
+        }
     }
 }
