@@ -29,7 +29,7 @@ public abstract class Container : IContainer
         MaxCargoWeight = maxCargoWeight;
     }
 
-    public void Unload()
+    public virtual void Unload()
     {
         throw new NotImplementedException();
     }
