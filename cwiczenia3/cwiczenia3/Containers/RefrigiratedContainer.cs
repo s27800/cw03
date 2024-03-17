@@ -86,13 +86,14 @@ public class RefrigiratedContainer : Container
                 }
                 break;
             default:
-                Console.WriteLine("Wrong type of food for Refrigirated Container");
+                Console.WriteLine("Wrong type of food for Refrigirated Container.");
                 break;
         }
+        Console.WriteLine("Created refrigirated container.");
     }
 
     public void WrongTemperature()
     {
-        Console.WriteLine("Wrong temperature for " + Type + ". Changed temperature to " + Temperature);
+        Console.WriteLine("Wrong temperature for " + Type + ". Changed temperature to " + Temperature + ".");
     }
 }

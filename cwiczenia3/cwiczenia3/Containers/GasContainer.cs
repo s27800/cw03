@@ -11,6 +11,7 @@ public class GasContainer : Container, IHazardNotifier
     public GasContainer(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight, int pressure) : base(cargoWeight, height, containerWeight, depth, serialNumber, maxCargoWeight)
     {
         Pressure = pressure;
+        Console.WriteLine("Created gas container.");
     }
 
     public override void Unload()
