@@ -5,7 +5,7 @@ public class Program {
     public static void Main(string[] args)
     {
         //GasContainer
-        GasContainer gasContainer = new GasContainer(20, 250, 550, 550, "KON-G-1", 300, 3);
+        GasContainer gasContainer = new GasContainer(20, 250, 550, 550, 300, 3);
         
         try
         {
@@ -22,7 +22,7 @@ public class Program {
         Console.WriteLine("Cargo weight after unload: " + gasContainer.CargoWeight);
         
         //LiquidContainer
-        LiquidContainer liquidContainer = new LiquidContainer(120, 200, 700, 600, "KON-L-2", 800, true);
+        LiquidContainer liquidContainer = new LiquidContainer(120, 200, 700, 600, 800, true);
         
         try
         {
@@ -35,7 +35,7 @@ public class Program {
         }
         
         //RefrigiratedContainer
-        RefrigiratedContainer refrigiratedContainer = new RefrigiratedContainer(0, 230, 1200, 720, "KON-R-3", 1000, "Bananas", 12);
+        RefrigiratedContainer refrigiratedContainer = new RefrigiratedContainer(0, 230, 1200, 720, 1000, "Bananas", 12);
         
         try
         {

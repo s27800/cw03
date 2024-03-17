@@ -8,8 +8,9 @@ public class RefrigiratedContainer : Container
     public string Type { get; protected set; }
     public double Temperature { get; protected set; }
     
-    public RefrigiratedContainer(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight, string type, double temperature) : base(cargoWeight, height, containerWeight, depth, serialNumber, maxCargoWeight)
+    public RefrigiratedContainer(int cargoWeight, int height, int containerWeight, int depth, int maxCargoWeight, string type, double temperature) : base(cargoWeight, height, containerWeight, depth, maxCargoWeight)
     {
+        SerialNumber = "KON-R-"+ ++number;
         Type = type;
         Temperature = temperature;
 

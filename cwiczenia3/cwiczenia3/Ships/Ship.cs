@@ -40,4 +40,12 @@ public class Ship
             Console.WriteLine("Unable to add container " + container.SerialNumber + " to the ship.");
         }
     }
+
+    public void AddContainer(List<Container> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            AddContainer(list[i]);
+        }
+    }
 }

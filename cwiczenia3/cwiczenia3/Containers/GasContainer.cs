@@ -8,8 +8,9 @@ public class GasContainer : Container, IHazardNotifier
     
     public int Pressure { get; protected set; }
     
-    public GasContainer(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight, int pressure) : base(cargoWeight, height, containerWeight, depth, serialNumber, maxCargoWeight)
+    public GasContainer(int cargoWeight, int height, int containerWeight, int depth, int maxCargoWeight, int pressure) : base(cargoWeight, height, containerWeight, depth, maxCargoWeight)
     {
+        SerialNumber = "KON-G-" + ++number;
         Pressure = pressure;
         Console.WriteLine("Created gas container.");
     }

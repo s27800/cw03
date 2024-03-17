@@ -9,8 +9,9 @@ public class LiquidContainer : Container, IHazardNotifier
     
     public bool HasDangerousCargo { get; protected set; }
     
-    public LiquidContainer(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight, bool hasDangerousCargo) : base(cargoWeight, height, containerWeight, depth, serialNumber, maxCargoWeight)
+    public LiquidContainer(int cargoWeight, int height, int containerWeight, int depth, int maxCargoWeight, bool hasDangerousCargo) : base(cargoWeight, height, containerWeight, depth, maxCargoWeight)
     {
+        SerialNumber = "KON-L-" + ++number;
         HasDangerousCargo = hasDangerousCargo;
         Console.WriteLine("Created liquid container.");
     }

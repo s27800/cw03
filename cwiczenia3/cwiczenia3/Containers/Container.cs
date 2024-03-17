@@ -5,6 +5,8 @@ namespace cwiczenia3;
 
 public abstract class Container : IContainer
 {
+    protected static int number = 0;
+    
     private int cargoWeight; //[kg]
     private int height; //[cm]
     private int containerWeight; //[kg]
@@ -19,13 +21,13 @@ public abstract class Container : IContainer
     public string SerialNumber { get; protected set; }
     public int MaxCargoWeight { get; protected set; }
 
-    protected Container(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight)
+    protected Container(int cargoWeight, int height, int containerWeight, int depth, int maxCargoWeight)
     {
         CargoWeight = cargoWeight;
         Height = height;
         ContainerWeight = containerWeight;
         Depth = depth;
-        SerialNumber = serialNumber;
+        SerialNumber = "KON-C";
         MaxCargoWeight = maxCargoWeight;
     }
 
