@@ -25,12 +25,12 @@ public class LiquidContainer : Container, IHazardNotifier
         }
         else
         {
-            throw new OverfillException("Too heavy cargo. Unable to load.");
+            SendMessage();
         }
     }
 
     public void SendMessage()
     {
-        Console.WriteLine("Dangerous situation in container " + this.SerialNumber);
+        Console.WriteLine("Dangerous situation in container " + this.SerialNumber + ". Unable to add more cargo.");
     }
 }

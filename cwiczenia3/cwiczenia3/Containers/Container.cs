@@ -36,8 +36,11 @@ public abstract class Container : IContainer
 
     public virtual void Load(int cargoWeight)
     {
-        if((this.cargoWeight+cargoWeight) <= maxCargoWeight)
+        if ((this.cargoWeight + cargoWeight) <= maxCargoWeight)
+        {
             CargoWeight += cargoWeight;
+            Console.WriteLine("Added cargo to container " + SerialNumber);
+        }
         else
         {
             throw new OverfillException("Too heavy cargo. Unable to load.");
