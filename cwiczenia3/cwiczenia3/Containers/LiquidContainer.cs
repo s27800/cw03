@@ -11,7 +11,7 @@ public class LiquidContainer : Container, IHazardNotifier
     
     public LiquidContainer(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight, bool hasDangerousCargo) : base(cargoWeight, height, containerWeight, depth, serialNumber, maxCargoWeight)
     {
-        this.hasDangerousCargo = hasDangerousCargo;
+        HasDangerousCargo = hasDangerousCargo;
         Console.WriteLine("Created liquid container.");
     }
 
