@@ -1,15 +1,36 @@
-﻿namespace cwiczenia3;
+﻿using cwiczenia3.Exceptions;
+using cwiczenia3.Interfaces;
 
-public class LiquidContainer : Container
+namespace cwiczenia3;
+
+public class LiquidContainer : Container, IHazardNotifier
 {
-    public LiquidContainer(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight) : base(cargoWeight, height, containerWeight, depth, serialNumber, maxCargoWeight)
+    private bool hasDangerousCargo;
+    
+    public bool HasDangerousCargo { get; protected set; }
+    
+    public LiquidContainer(int cargoWeight, int height, int containerWeight, int depth, string serialNumber, int maxCargoWeight, bool hasDangerousCargo) : base(cargoWeight, height, containerWeight, depth, serialNumber, maxCargoWeight)
     {
-        
+        this.hasDangerousCargo = hasDangerousCargo;
     }
 
     public override void Load(int cargoWeight)
     {
-        Console.WriteLine();
-        base.Load(cargoWeight);
+        if (
+            (HasDangerousCargo && CargoWeight + cargoWeight <= 0.5 * MaxCargoWeight)
+            || (!HasDangerousCargo && CargoWeight + cargoWeight <= 0.9 * MaxCargoWeight)
+            )
+        {
+            base.Load(cargoWeight);
+        }
+        else
+        {
+            throw new OverfillException("Too heavy cargo. Unable to load.");
+        }
+    }
+
+    public void SendMessage()
+    {
+        Console.WriteLine("Dangerous situation in container " + this.SerialNumber);
     }
 }
