@@ -33,7 +33,7 @@ public abstract class Container : IContainer
 
     public virtual void Unload()
     {
-        throw new NotImplementedException();
+        CargoWeight = 0;
     }
 
     public virtual void Load(int cargoWeight)

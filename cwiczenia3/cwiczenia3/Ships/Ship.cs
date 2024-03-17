@@ -29,10 +29,10 @@ public class Ship
     {
         if (
             (container.ContainerWeight + container.CargoWeight + CurrentWeight <= MaxContainersWeight)
-            && (this.containers.Count + 1 <= MaxNumberOfContainers)
+            && (Containers.Count + 1 <= MaxNumberOfContainers)
         )
         {
-            this.containers.Add(container);
+            Containers.Add(container);
             Console.WriteLine("Added container " + container.SerialNumber + " to the ship.");
         }
         else

@@ -24,10 +24,14 @@ public class Program {
         //LiquidContainer
         LiquidContainer liquidContainer = new LiquidContainer(120, 200, 700, 600, 800, true);
         
+        Console.WriteLine("Cargo weight before unload: " + liquidContainer.CargoWeight);
+        liquidContainer.Unload();
+        Console.WriteLine("Cargo weight after unload: " + liquidContainer.CargoWeight);
+
         try
         {
             liquidContainer.Load(100);
-            liquidContainer.Load(300);
+            liquidContainer.Load(301);
         }
         catch(OverfillException e)
         {
@@ -35,7 +39,11 @@ public class Program {
         }
         
         //RefrigiratedContainer
-        RefrigiratedContainer refrigiratedContainer = new RefrigiratedContainer(0, 230, 1200, 720, 1000, "Bananas", 12);
+        RefrigiratedContainer refrigiratedContainer = new RefrigiratedContainer(5, 230, 1200, 720, 1000, "Bananas", 12);
+        
+        Console.WriteLine("Cargo weight before unload: " + refrigiratedContainer.CargoWeight);
+        refrigiratedContainer.Unload();
+        Console.WriteLine("Cargo weight after unload: " + refrigiratedContainer.CargoWeight);
         
         try
         {
