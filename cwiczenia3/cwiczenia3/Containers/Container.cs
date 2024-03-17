@@ -36,7 +36,7 @@ public abstract class Container : IContainer
 
     public virtual void Load(int cargoWeight)
     {
-        if ((this.cargoWeight + cargoWeight) <= maxCargoWeight)
+        if ((CargoWeight + cargoWeight) <= MaxCargoWeight)
         {
             CargoWeight += cargoWeight;
             Console.WriteLine("Added cargo to container " + SerialNumber);

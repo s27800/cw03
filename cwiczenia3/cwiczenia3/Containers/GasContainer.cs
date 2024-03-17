@@ -19,6 +19,13 @@ public class GasContainer : Container, IHazardNotifier
         CargoWeight = (int) (0.05 * CargoWeight);
     }
 
+    public override void Load(int cargoWeight)
+    {
+        if(CargoWeight + cargoWeight > MaxCargoWeight)
+            SendMesssage();
+        base.Load(cargoWeight);
+    }
+
     public void SendMesssage()
     {
         Console.WriteLine("Dangerous situation in container " + SerialNumber);
