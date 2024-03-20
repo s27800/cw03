@@ -1,5 +1,6 @@
-﻿using cwiczenia3;
+﻿using cwiczenia3.Ships;
 using cwiczenia3.Exceptions;
+using cwiczenia3.Containers;
 
 public class Program {
     public static void Main(string[] args)
@@ -54,5 +55,17 @@ public class Program {
         {
             Console.WriteLine(e);
         }
+        
+        //Ship
+        Ship ship = new Ship("USCGC Dallas", 50, 5, 5000);
+
+        List<Container> list = new List<Container>();
+        list.Add(liquidContainer);
+        list.Add(refrigiratedContainer);
+        
+        ship.AddContainer(gasContainer);
+        ship.AddContainer(list);
+        
+        ship.ShowContainers();
     }
 }

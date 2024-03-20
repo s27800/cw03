@@ -1,6 +1,6 @@
 ﻿using cwiczenia3.Interfaces;
 
-namespace cwiczenia3;
+namespace cwiczenia3.Containers;
 
 public class GasContainer : Container, IHazardNotifier
 {
@@ -30,5 +30,11 @@ public class GasContainer : Container, IHazardNotifier
     public void SendMesssage()
     {
         Console.WriteLine("Dangerous situation in container " + SerialNumber);
+    }
+
+    public override string ToString()
+    {
+        return "Gas Container "+ SerialNumber;
+        
     }
 }

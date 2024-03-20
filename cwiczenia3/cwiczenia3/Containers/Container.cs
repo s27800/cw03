@@ -1,7 +1,7 @@
 ﻿using cwiczenia3.Exceptions;
 using cwiczenia3.Interfaces;
 
-namespace cwiczenia3;
+namespace cwiczenia3.Containers;
 
 public abstract class Container : IContainer
 {
@@ -47,5 +47,10 @@ public abstract class Container : IContainer
         {
             throw new OverfillException("Too heavy cargo. Unable to load.");
         }
+    }
+
+    public override string ToString()
+    {
+        return "Container "+ SerialNumber;
     }
 }

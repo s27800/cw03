@@ -1,4 +1,6 @@
-﻿namespace cwiczenia3.Boats;
+﻿using cwiczenia3.Containers;
+
+namespace cwiczenia3.Ships;
 
 public class Ship
 {
@@ -16,8 +18,9 @@ public class Ship
     public double MaxContainersWeight { get; protected set; }
     public double CurrentWeight { get; protected set; }
 
-    public Ship(int maxSpeed, int maxNumberOfContainers, double maxContainersWeight)
+    public Ship(string name, int maxSpeed, int maxNumberOfContainers, double maxContainersWeight)
     {
+        Name = name;
         Containers = new List<Container>();
         MaxSpeed = maxSpeed;
         MaxNumberOfContainers = maxNumberOfContainers;
@@ -46,6 +49,15 @@ public class Ship
         for (int i = 0; i < list.Count; i++)
         {
             AddContainer(list[i]);
+        }
+    }
+
+    public void ShowContainers()
+    {
+        Console.WriteLine("Ship "+ Name + ":");
+        for(int i=0; i<Containers.Count; i++)
+        {
+            Console.WriteLine(Containers[i]);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using cwiczenia3.Exceptions;
 using cwiczenia3.Interfaces;
 
-namespace cwiczenia3;
+namespace cwiczenia3.Containers;
 
 public class LiquidContainer : Container, IHazardNotifier
 {
@@ -34,5 +34,10 @@ public class LiquidContainer : Container, IHazardNotifier
     public void SendMessage()
     {
         Console.WriteLine("Dangerous situation in container " + this.SerialNumber + ". Unable to add more cargo.");
+    }
+
+    public override string ToString()
+    {
+        return "Liquid Container "+ SerialNumber;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace cwiczenia3;
+﻿namespace cwiczenia3.Containers;
 
 public class RefrigiratedContainer : Container
 {
@@ -96,5 +96,10 @@ public class RefrigiratedContainer : Container
     public void WrongTemperature()
     {
         Console.WriteLine("Wrong temperature for " + Type + ". Changed temperature to " + Temperature + ".");
+    }
+
+    public override string ToString()
+    {
+        return "Refrigirated Container "+ SerialNumber;
     }
 }
