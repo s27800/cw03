@@ -57,7 +57,7 @@ public class Program {
         }
         
         //Ship
-        Ship ship = new Ship("USCGC Dallas", 50, 5, 5000);
+        Ship ship = new Ship("USCGC Dallas", 50, 5, 5);
 
         List<Container> list = new List<Container>();
         list.Add(liquidContainer);
@@ -65,7 +65,23 @@ public class Program {
         
         ship.AddContainer(gasContainer);
         ship.AddContainer(list);
-        
         ship.ShowContainers();
+        
+        ship.DeleteContainer(liquidContainer);
+        ship.ShowContainers();
+        
+        ship.AddContainer(new LiquidContainer(1000, 200, 4500, 500, 3000, false));
+        ship.ShowContainers();
+
+        Ship ship2 = new Ship("USCGC Alder", 45, 3, 5);
+        ship.MoveContainerToAnotherShip(gasContainer, ship2);
+        ship.ShowContainers();
+        ship2.ShowContainers();
+        
+        ship2.ReplaceContainer("KON-G-1", liquidContainer);
+        ship2.ShowContainers();
+        
+        ship.ShowInfo();
+        ship2.ShowInfo();
     }
 }
